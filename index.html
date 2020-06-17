@@ -25,11 +25,12 @@
 
                      <div class="col-md-5 center-item">
                         <div class="input-group number-spinner">
-                           <button class="btn btn-default"><i class="fas fa-minus"></i></button>
-                           <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button id="minus-button" class="btn btn-default"><i class="fas fa-minus"></i></button>
+                           <input id="iphone-qty" type="text" class="form-control text-center" value="1">
+                           <button id="plus-button"  class="btn btn-default"><i class="fas fa-plus"></i></button>
                         </div>
-                        <h5>$1219</h5>
+                        <!-- <h5>$<span id='iphone-price'>1219</span></h5> -->
+                        <h5>$<span id='iphone-price'>12</span></h5>
                         <img src="images/remove.png" alt="" class="remove-item">
                      </div>
                   </div>
@@ -45,7 +46,7 @@
                         <div class="input-group number-spinner">
                            <button class="btn btn-default"><i class="fas fa-minus"></i></button>
                            <input type="text" class="form-control text-center" value="1">
-                           <button class="btn btn-default"><i class="fas fa-plus"></i></button>
+                           <button  class="btn btn-default"><i class="fas fa-plus"></i></button>
 
                         </div>
                         <h5>$59</h5>
@@ -79,4 +80,39 @@
    </section>
 </body>
 
+<script>
+   //------------Functions-------------------
+
+   function getQuantity(id){
+         var qty= document.getElementById(id).value;
+         var quantity= parseFloat(qty);
+         return quantity;
+      };
+
+   function priceCalculation(price,quantity, id){
+      var totalPrice= quantity*price;
+      document.getElementById(id).innerText=totalPrice;
+   }
+
+   //----------------------------------Plus Button--------------------------------   
+   var plusBtn= document.getElementById("plus-button");
+   plusBtn.addEventListener("click",function(){     
+      var quantity= getQuantity("iphone-qty");
+      document.getElementById("iphone-qty").value=quantity+1; //Input field increment by 1
+      quantity++;   
+      priceCalculation(12, quantity,"iphone-price") ;
+      
+   });
+
+   //----------------------------------Minus button------------------------------------
+   var minusBtn= document.getElementById("minus-button");
+   minusBtn.addEventListener("click",function(){
+      var quantity= getQuantity("iphone-qty");
+      document.getElementById("iphone-qty").value=quantity-1; 
+      quantity--;
+      priceCalculation(12,quantity,"iphone-price");  
+   });
+</script>
+
+   
 </html>
