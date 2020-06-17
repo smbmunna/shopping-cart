@@ -116,7 +116,7 @@
       var quantity= getQuantity("iphone-qty");
       document.getElementById("iphone-qty").value=quantity+1; //Input field increment by 1
       quantity++;   
-      priceCalculation(12, quantity,"iphone-price") ;
+      priceCalculation(1219, quantity,"iphone-price") ;
 
       subTotalCalculation();   
    });
@@ -128,7 +128,7 @@
       var quantity= getQuantity("iphone-qty");
       document.getElementById("iphone-qty").value=quantity-1; 
       quantity--;
-      priceCalculation(12,quantity,"iphone-price");  
+      priceCalculation(1219,quantity,"iphone-price");  
 
       subTotalCalculation();
    });
@@ -141,7 +141,7 @@
       var quantity= getQuantity("cover-quantity");
       document.getElementById("cover-quantity").value=quantity+1;
       quantity++;
-      priceCalculation(10,quantity,"cover-price");
+      priceCalculation(59,quantity,"cover-price");
       
       subTotalCalculation();
    });
@@ -153,7 +153,7 @@
       var quantity= getQuantity("cover-quantity");
       document.getElementById("cover-quantity").value=quantity-1;
       quantity--;
-      priceCalculation(10,quantity,"cover-price");
+      priceCalculation(59,quantity,"cover-price");
       
       subTotalCalculation();
    });
@@ -172,9 +172,7 @@ var removeBtn2= document.getElementById("remove-btn-2");
 var cart2= document.getElementById("cart-2");
 removeBtn2.addEventListener("click", function(){
    cart2.style.display='none';
-})
-
-   
+})  
 
 </script>
 
